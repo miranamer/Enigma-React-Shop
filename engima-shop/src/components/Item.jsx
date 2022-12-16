@@ -43,8 +43,8 @@ const Item = ({cart, setCart}) => {
   return (
     <>
     <div className="bg-[#FFE600] w-full max-h-screen">
-      <div className=" relative flex items-center justify-center">
-              <img className='mt-[1%] max-w-[700px] max-h-[500px] relative'  src={slider[index].img} alt="" />
+      <div className=" flex items-center justify-center">
+              <img className='mt-[1%] max-w-[700px] max-h-[500px]'  src={slider[index].img} alt="" />
               <p onClick={handleSliderLeft} className={`absolute left-[15%] text-5xl hover:cursor-pointer ${index === 0 ? 'text-black/40' : 'text-black'}`}><AiOutlineLeft /></p>
               <p onClick={handleSliderRight} className={`absolute right-[15%] text-5xl hover:cursor-pointer ${index === slider.length - 1 ? 'text-black/40' : 'text-black'}`}><AiOutlineRight /></p>
       </div>

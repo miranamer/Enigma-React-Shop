@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {BsCart} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
 
 
 const Cart = ({cart}) => {
     const navigate = useNavigate()
+
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        for(var i = 0; i < cart.length; i++){
+            setTotal(total + cart[i].price)
+        }
+    }, [cart]) // TODO: fix this!
+
+
   return (
     <>
     
@@ -19,13 +29,14 @@ const Cart = ({cart}) => {
         </div>
         <div className=" flex flex-col gap-5 items-center justify-center relative top-[70px]">
         {cart.map((item) => 
-        <div className='flex gap-2'>
-            <img src={item.img} alt="" className=' max-w-[300px] max-h-[300px]' />
-            <div className=" flex flex-col gap-2">
+        <div className=' min-w-[800px] flex gap-2 border-b-2  border-black'>
+            <img src={item.img} alt="" className=' aspect-[3/2] object-contain max-w-[300px] max-h-[300px]' />
+            <div className=" ml-[160px] flex flex-col gap-2 ">
                 <h1 className=' text-2xl relative top-[70px]'>{item.name}</h1>
                 <h1 className=' text-2xl relative top-[70px] bold'>${item.price}</h1>
             </div>
         </div>)}
+        <h1 className=' ml-[80px] mt-10 reg text-3xl'>Total: ${total} </h1>
         
         </div>
     </div>
