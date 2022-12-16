@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Javanese";
+    src: local("Javanese"),
+     url('./fonts/Javanese_Text.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Jeju";
+    src: local("Jeju"),
+    url('./fonts/JejuGothic-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "MonoReg";
+    src: local("MonoReg"),
+    url('./fonts/JetBrainsMonoNL-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "MonoBold";
+    src: local("MonoBold"),
+    url('./fonts/JetBrainsMono-Bold.ttf') format("truetype");
+}
+
+
+
+.javanese {
+    font-family: "Javanese";
+}
+
+.jeju {
+    font-family: "Jeju";
+}
+
+.reg {
+    font-family: "MonoReg";
+}
+
+.bold {
+    font-family: "MonoBold";
+}
