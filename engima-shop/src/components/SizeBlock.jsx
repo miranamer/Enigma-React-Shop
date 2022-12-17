@@ -3,7 +3,12 @@ import React from 'react'
 const SizeBlock = ({size, mainSize, setMainSize}) => {
 
   const handleSize = () => {
-    setMainSize(size)
+    if(mainSize === size){
+      setMainSize('');
+    }
+    else{
+      setMainSize(size)
+    }
   }
 
   return (

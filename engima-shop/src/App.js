@@ -4,6 +4,7 @@ import Shop from "./pages/Shop";
 import {Routes, Route} from 'react-router-dom';
 import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
+import Pay from "./pages/Pay";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/shop' element={<Shop cart={cart} setCart={setCart} total={total} setTotal={setTotal} keyA={keyA} setKeyA={setKeyA} />} />
         <Route path='/cart' element={<Cart cart={cart} total={total} setCart={setCart} setTotal={setTotal} />} />
         <Route path='/contact' element={<Contact cart={cart} />} />
+        <Route path="/pay" element={<Pay cart={cart} />} />
       </Routes>
     </>
   );
