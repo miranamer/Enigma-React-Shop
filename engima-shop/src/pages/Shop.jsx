@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Item from '../components/Item';
 import NavBar from '../components/NavBar';
 
-const Shop = ({cart, setCart}) => {
+const Shop = ({cart, setCart, setTotal, total, keyA, setKeyA}) => {
 
     const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ const Shop = ({cart, setCart}) => {
                 <p className='text-center text-2xl mt-2 ml-1'>{cart.length}</p>
             </div>
         </div>
-        <Item cart={cart} setCart={setCart} />
+        <Item cart={cart} setCart={setCart} setTotal={setTotal} total={total} keyA={keyA} setKeyA={setKeyA} />
     </div>
 
     </>
