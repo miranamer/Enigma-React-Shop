@@ -41,8 +41,8 @@ const Cart = ({cart, total, setCart, setTotal}) => {
         </div>
         {total > 0 ? <div className=" flex justify-center mt-[120px] items-center">
             <h1 className='relative top-0  mt-5 mr-[100px] reg text-3xl italic'>Total: <span className='bold text-green-600 drop-shadow-lg'>${total}</span> </h1>
-            <div className=" hover:cursor-pointer hover:bg-black hover:text-white relative flex items-center mt-[20px] justify-center h-[50px] w-[130px] border-2 border-black">
-                <h1 onClick={() => navigate('/contact')} className='javanese absolute top-[31%] text-2xl '>Next</h1>
+            <div onClick={() => navigate('/contact')} className=" hover:cursor-pointer hover:bg-black hover:text-white relative flex items-center mt-[20px] justify-center h-[50px] w-[130px] border-2 border-black">
+                <h1 className='javanese absolute top-[31%] text-2xl '>Next</h1>
             </div>
         </div> : <h1 className='reg text-4xl ml-[43%]  mt-[100px]'>Cart Is Empty!</h1>}
     </div>

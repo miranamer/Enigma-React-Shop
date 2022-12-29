@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import hoodie from '../assets/hoodie.png'
 import amiri from '../assets/amiri.png'
 import balenciaga from '../assets/balenciaga.png'
+import gucci from '../assets/gucci.png'
 import { AiOutlineCaretRight, AiOutlineCaretLeft, AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import ColorBlock from './ColorBlock';
 import SizeBlock from './SizeBlock';
@@ -12,11 +13,14 @@ const Item = ({cart, setCart, total, setTotal, keyA, setKeyA}) => {
   const allSizes = ['xs', 'sm', 'md', 'lg', 'xlg']
   const [slider, setSlider] = useState([{id: 0, name: 'Supreme Hoodie', price: 150, img: hoodie, colors: ['red', 'orange', 'blue'], sizes: ['xs', 'sm', 'md', 'lg']},
                                         {id: 1, name: 'Amiri Jacket', price: 1500, img: amiri, colors: ['pink', 'green', 'black'], sizes: ['md', 'lg', 'xlg']},
-                                        {id: 2, name: 'Balenciaga T-shirt', price: 450, img: balenciaga, colors: ['black', 'white'], sizes: ['xs', 'sm', 'lg']}]);
+                                        {id: 2, name: 'Balenciaga T-shirt', price: 450, img: balenciaga, colors: ['black', 'white'], sizes: ['xs', 'sm', 'lg']},
+                                        {id: 3, name: "Gucci Cap", price: 200, img: gucci, colors: ['black'], sizes: ['sm']}]);
 
     const [index, setIndex] = useState(0);
 
     const handleSliderRight = () => {
+        setMainColor('')
+        setMainSize('')
         if(index === slider.length - 1){
             return null;
         }
@@ -26,6 +30,8 @@ const Item = ({cart, setCart, total, setTotal, keyA, setKeyA}) => {
     }
 
     const handleSliderLeft = () => {
+        setMainColor('')
+        setMainSize('')
         if(index === 0){
             return null;
         }
@@ -36,11 +42,8 @@ const Item = ({cart, setCart, total, setTotal, keyA, setKeyA}) => {
 
     const handleAdd = (e) => {
       e.preventDefault()
-      if(mainColor === ''){
-        alert('Select A Color!')
-      }
-      if(mainSize === ''){
-        alert('Select A Size')
+      if(mainColor === '' || mainSize === ''){
+        alert('Select A Color and Size!')
       }
       else{
         setCart([...cart, [slider[index], keyA, mainColor, mainSize]])
@@ -58,7 +61,7 @@ const Item = ({cart, setCart, total, setTotal, keyA, setKeyA}) => {
     <>
     <div className="bg-[#FFE600] w-full max-h-screen">
       <div className=" flex items-center justify-center">
-              <img className='mt-[1%] max-w-[700px] max-h-[500px]'  src={slider[index].img} alt="" />
+              <img className='mt-[1%] max-w-[700px] max-h-[500px] bg-transparent'  src={slider[index].img} alt="" />
               <p onClick={handleSliderLeft} className={`absolute left-[15%] text-5xl hover:cursor-pointer ${index === 0 ? 'text-black/40' : 'text-black'}`}><AiOutlineLeft /></p>
               <p onClick={handleSliderRight} className={`absolute right-[15%] text-5xl hover:cursor-pointer ${index === slider.length - 1 ? 'text-black/40' : 'text-black'}`}><AiOutlineRight /></p>
       </div>
