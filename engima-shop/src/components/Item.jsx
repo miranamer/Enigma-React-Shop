@@ -62,7 +62,7 @@ const Item = ({cart, setCart, total, setTotal, keyA, setKeyA}) => {
               <p onClick={handleSliderLeft} className={`absolute left-[15%] text-5xl hover:cursor-pointer ${index === 0 ? 'text-black/40' : 'text-black'}`}><AiOutlineLeft /></p>
               <p onClick={handleSliderRight} className={`absolute right-[15%] text-5xl hover:cursor-pointer ${index === slider.length - 1 ? 'text-black/40' : 'text-black'}`}><AiOutlineRight /></p>
       </div>
-      <div className="absolute bottom-20 left-[42%] flex flex-col gap-8 items-center">
+      <div className="absolute bottom-[95px] left-[42%] flex flex-col gap-8 items-center">
               <h1 className='text-2xl reg'>{slider[index].name}</h1>
               <div className=" flex  gap-10">
                 {slider[index].colors.map((color) => <ColorBlock setMainColor={setMainColor} mainColor={mainColor} color={color} />)}
