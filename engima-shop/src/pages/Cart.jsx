@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {BsCart} from 'react-icons/bs'
 import {AiOutlineClose} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
+import Logo from '../assets/logo.png'
 
 
 const Cart = ({cart, total, setCart, setTotal}) => {
@@ -14,19 +15,20 @@ const Cart = ({cart, total, setCart, setTotal}) => {
         setCart(cart.filter(item => item[1] !== id))
     }
 
+    //<h1 className=' text-center text-3xl javanese pt-2 italic'>Cart</h1>
+
   return (
     <>
     
     <div className="bg-[#FFE600] w-full h-screen overflow-auto pb-[100px]">
         <div className=" flex items-center justify-between w-full px-20 h-[120px] javanese">
             <h1 className='text-4xl hover:cursor-pointer'>Help</h1>
-            <h1 onClick={() => navigate('/')} className=' text-5xl hover:cursor-pointer'>Enigma</h1>
+            <img src={Logo} onClick={() => navigate('/')} className=" hover:cursor-pointer w-[300px]" alt="" />
             <div className=" flex">
                 <h1 onClick={() => navigate('/cart')} className=' text-4xl hover:cursor-pointer'><BsCart /></h1>
                 <p className='text-center text-2xl mt-2 ml-1'>{cart.length}</p>
             </div>
         </div>
-        <h1 className=' text-center text-3xl javanese pt-2 italic'>Cart</h1>
         <div className=" flex flex-col gap-5 items-center justify-center relative top-[70px]">
         {cart.map((item) => 
         <div className=' min-w-[800px] flex gap-2 '>
