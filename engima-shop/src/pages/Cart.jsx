@@ -30,16 +30,16 @@ const Cart = ({cart, total, setCart, setTotal}) => {
             </div>
         </div>
         <div className=" flex flex-col gap-5 items-center justify-center relative top-[70px]">
-        {cart.map((item) => 
-        <div className=' min-w-[800px] flex gap-2 '>
-            <h1 onClick={() => deleteItem(item[1], item)} className='mt-[15%] mr-[10%] bold text-2xl text-red-700 hover:cursor-pointer'><AiOutlineClose /></h1>
-            <img src={item[0].img} alt="" className=' aspect-[3/2] object-contain max-w-[300px] max-h-[300px]' />
-            <div className=" ml-[120px] flex flex-col gap-2 mb-3 w-full h-[250px] ">
-                <h1 className=' text-2xl relative top-[70px] reg'>{item[0].name} ({item[3]})</h1>
-                <h1 className=' text-2xl relative top-[70px] mt-[20px] bold'>${item[0].price}</h1>
-                <h1 className=' text-2xl relative top-[70px] mt-[20px] bold'><span className='reg'>Color: </span><span className=' drop-shadow-lg' style={{color: item[2]}}>{item[2].charAt(0).toUpperCase() + item[2].slice(1)}</span></h1>
-            </div>
-        </div>)}
+            {cart.map((item) =>  
+            <div className=' min-w-[800px] flex gap-2 '>
+                <h1 onClick={() => deleteItem(item[1], item)} className='mt-[15%] mr-[10%] bold text-2xl text-red-700 hover:cursor-pointer'><AiOutlineClose /></h1>
+                <img src={item[0].img} alt="" className=' aspect-[3/2] object-contain max-w-[300px] max-h-[300px]' />
+                <div className=" ml-[120px] flex flex-col gap-2 mb-3 w-full h-[300px] ">
+                    <h1 className=' text-2xl relative top-[70px] reg'>{item[0].name} ({item[3]}) - x{cart.filter(x => x===item).length}</h1>
+                    <h1 className=' text-2xl relative top-[70px] mt-[20px] bold'>${item[0].price}</h1>
+                    <h1 className=' text-2xl relative top-[70px] mt-[20px] bold'><span className='reg'>Color: </span><span className=' drop-shadow-lg' style={{color: item[2]}}>{item[2].charAt(0).toUpperCase() + item[2].slice(1)}</span></h1>
+                </div>
+            </div>)}
         </div>
         {total > 0 ? <div className=" flex justify-center mt-[120px] items-center">
             <h1 className='relative top-0  mt-5 mr-[100px] reg text-3xl italic'>Total: <span className='bold text-green-600 drop-shadow-lg'>${total}</span> </h1>
