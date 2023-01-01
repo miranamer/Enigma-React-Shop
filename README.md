@@ -1,4 +1,4 @@
-# Enigma Shop
+# Enigma Shop (React JS)
 
 ![Screenshot 2023-01-01 142249](https://user-images.githubusercontent.com/91673777/210173959-eaae7ccf-7baa-421c-b966-2435847f010b.png)
 
